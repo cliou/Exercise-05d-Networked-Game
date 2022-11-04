@@ -27,6 +27,7 @@ func _unhandled_input(event):
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -mouse_range, mouse_range)
 
 func die():
+	rpc_unreliable("_die")
 	queue_free()
 
 func get_input():
